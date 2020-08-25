@@ -104,19 +104,34 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    InventariosFrame pantallaInv;
     private void btnInventariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventariosActionPerformed
         // TODO add your handling code here:
-        InventariosFrame pantallaInv = new InventariosFrame();
+        if (pantallaInv == null){
+            pantallaInv =  new InventariosFrame();
         mostrarSeleccion.add(pantallaInv);
         pantallaInv.setVisible(true);
+        mostrarSeleccion.getDesktopManager().maximizeFrame(pantallaInv);
+        }
+        else {
+            mostrarSeleccion.getDesktopManager().maximizeFrame(pantallaInv);
+        }
+        
     }//GEN-LAST:event_btnInventariosActionPerformed
 
+    VentasFrame pantallaVentas;
     private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasActionPerformed
         // TODO add your handling code here:
-        VentasFrame pantallaVentas = new VentasFrame();
+        if (pantallaVentas == null) {
+          pantallaVentas =  new VentasFrame();
         mostrarSeleccion.add(pantallaVentas);
         pantallaVentas.setVisible(true);
+        mostrarSeleccion.getDesktopManager().maximizeFrame(pantallaVentas);
+        }
+        else {
+           mostrarSeleccion.getDesktopManager().maximizeFrame(pantallaVentas); 
+        }
+         
     }//GEN-LAST:event_btnVentasActionPerformed
 
     /**
