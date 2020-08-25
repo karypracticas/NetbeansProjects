@@ -53,6 +53,7 @@ public class ArticuloFrame extends javax.swing.JDialog {
         jTextField4 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Artículo");
 
         jLabel2.setText("Clave:");
 
