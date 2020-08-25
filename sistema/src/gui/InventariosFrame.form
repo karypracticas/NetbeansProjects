@@ -36,7 +36,7 @@
                   </Group>
                   <Component id="jLabel1" min="-2" pref="79" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="jButton1" min="-2" pref="140" max="-2" attributes="0"/>
+                      <Component id="btnNuevoArticulo" min="-2" pref="140" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButton2" min="-2" pref="140" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -78,7 +78,7 @@
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jButton3" pref="128" max="32767" attributes="0"/>
                   <Component id="jButton2" max="32767" attributes="0"/>
-                  <Component id="jButton1" max="32767" attributes="0"/>
+                  <Component id="btnNuevoArticulo" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
@@ -125,9 +125,9 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btnNuevoArticulo">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNuevoArticuloActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
