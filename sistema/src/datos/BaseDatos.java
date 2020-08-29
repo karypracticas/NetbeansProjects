@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import pojos.Producto;
@@ -88,9 +89,53 @@ public class BaseDatos {
         }
     }
     
-    public static void main(String[] args) {
+    
+    public ArrayList<Venta> obtenerVenta(){
+        
+        ArrayList<Venta> listaVentas = new ArrayList<Venta>();
+        
+        try {
+            try {
+                conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/miSistema", "postgres", "1986");
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            
+            String sql = "SELECT * FROM ventas;";
+            st = conn.prepareStatement(sql);       
+            rs = st.executeQuery();
+            
+            while(rs.next()) {
+                int idVenta = rs.getInt("id_venta");
+                int montoVenta = rs.getInt("monto_venta");
+                String fechaVenta = rs.getString("fecha_venta");
+                
+                Venta venta = new Venta(idVenta,montoVenta,fechaVenta);
+                listaVentas.add(venta);
+            }
+            
+            
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        finally {
+            try {
+                st.close();
+                conn.close();
+            } catch (SQLException ex) {
+               ex.printStackTrace();
+            }
+        }
+        return listaVentas;
+    }
+    
+    /*public static void main(String[] args) {
         Venta venta = new Venta(5,8,"2020-08-29");
         BaseDatos base = new BaseDatos();
         base.insertarVenta(venta);
-    }
+    }*/
+    
+    
+    
+    
 }
